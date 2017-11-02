@@ -1,0 +1,4 @@
+oci.s3_compat.access_key.id=ocid1.credential.oc1..anEXAMPLE
+oci.s3_compat.access_key=anEXAMPLE=
+oci.tenancy=tenancy
+oci.region=us-phoenix-1
