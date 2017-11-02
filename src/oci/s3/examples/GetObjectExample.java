@@ -34,6 +34,7 @@ public class GetObjectExample {
 
 		try {
 			Files.copy(object.getObjectContent(), targetFile.toPath());
+			System.out.println("Get Object saved to "+targetFile.toPath());
 		} catch (IOException e) {
 			System.out.println("ERROR: "+e.getMessage());
 		}
