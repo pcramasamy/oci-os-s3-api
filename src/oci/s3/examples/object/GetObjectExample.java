@@ -1,4 +1,4 @@
-package oci.s3.examples;
+package oci.s3.examples.object;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +14,7 @@ public class GetObjectExample {
 	public static void main(String args[]) {
 		
 		if (args.length < 3) {
-			System.out.println("java oci.s3.examples.GetObjectExample <bucket> <object> <target_file>");
+			System.out.println("java oci.s3.examples.object.GetObjectExample <bucket> <object> <target_file>");
 			System.exit(1);
 		}
 		
