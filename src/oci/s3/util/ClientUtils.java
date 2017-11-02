@@ -13,7 +13,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
 
 public class ClientUtils {
 	
-	public static AmazonS3 buildAmazonS3Client() throws IOException {
+	public static AmazonS3 buildAmazonS3ClientForOCI() throws IOException {
 		// load oci config file
 		Properties ociConfigProps = new Properties();
 		FileInputStream configStream = new FileInputStream("oci.config");
