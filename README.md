@@ -6,15 +6,15 @@ Bucket APIs
 
 The following bucket APIs are supported:
 
-DeleteBucket
-HeadBucket
-ListObjects
-PutBucket
-Object APIs
+- DeleteBucket
+- HeadBucket
+- ListObjects
+- PutBucket
+- Object APIs
 
 The following object APIs are supported:
 
-DeleteObject
-GetObject
-HeadObject
-PutObject
+- DeleteObject
+- GetObject
+- HeadObject
+- PutObject
