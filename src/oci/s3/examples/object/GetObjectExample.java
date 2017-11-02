@@ -20,7 +20,7 @@ public class GetObjectExample {
 		
 		AmazonS3 client = null;
 		try {
-			client = ClientUtils.buildAmazonS3Client();
+			client = ClientUtils.buildAmazonS3ClientForOCI();
 		} catch (IOException e) {
 			System.out.println("ERROR: OCI Config file not found");
 		}
