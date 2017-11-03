@@ -1,7 +1,6 @@
 package oci.s3.examples.object;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,15 +39,14 @@ public class MultipartUploadObjectExample {
 		UploadPartResult uplPartResult = null;
 		
 		for(int i=2; i< args.length; i++) {
-//			try {
-//				FileInputStream fs = new FileInputStream(args[i]);
-				uplPartRequest.withBucketName(args[0]).withKey(args[1]).withUploadId(initMPResult.getUploadId()).withPartNumber(i-1).setFile(new File(args[i]));
-				//uplPartRequest.setFile(file);
-				uplPartResult = client.uploadPart(uplPartRequest);
-				partETags.add(uplPartResult.getPartETag());
-//			} catch (FileNotFoundException e) {
-//				System.out.println("ERROR: Part file not found - " + args[i]);
-//			}
+		    File file = new File(args[i]);
+			uplPartRequest.withBucketName(args[0])
+				.withKey(args[1]).withUploadId(initMPResult.getUploadId())
+				.withPartNumber(i-1)
+				.withPartSize(file.length())
+				.setFile(file);
+			uplPartResult = client.uploadPart(uplPartRequest);
+			partETags.add(uplPartResult.getPartETag());
 		}
 		
 		CompleteMultipartUploadRequest compMPRequest = new CompleteMultipartUploadRequest(args[0], args[1], initMPResult.getUploadId(), partETags);
